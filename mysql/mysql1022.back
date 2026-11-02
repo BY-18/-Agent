@@ -1,0 +1,5 @@
+ALTER TABLE `t_column_info`
+DROP COLUMN `a`;
+delete
+update
+insert

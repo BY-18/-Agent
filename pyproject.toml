@@ -1,0 +1,25 @@
+# ============================================================
+# 项目依赖声明文件（uv / pip 均可读取）
+# 添加依赖请使用 uv add 包名，本文件会被自动更新
+# ============================================================
+
+[project]
+# 项目名称
+name = "text2sql1021"
+# 项目版本号
+version = "0.1.0"
+# 要求的最低 Python 版本
+requires-python = ">=3.12"
+# 运行时依赖列表（按字母序排列）
+dependencies = [
+    "asyncmy>=0.2.16",            # MySQL 异步驱动，配合 SQLAlchemy 异步引擎使用
+    "elasticsearch>=8.19,<9",     # ES 官方客户端（主版本必须与服务端 8.x 一致，9.x 客户端会被 8.x 拒绝）
+    "jieba>=0.42.1",              # 中文分词库，用于关键词抽取
+    "langchain>=1.4.3",           # LangChain 核心框架
+    "langchain-openai>=1.6.7",    # LangChain 的 OpenAI 兼容集成（LLM 与 Embedding）
+    "langgraph[visualization]>=1.2.14",  # 图式智能体编排框架，附带可视化依赖
+    "loguru>=0.7.3",              # 日志框架，支持按天滚动、上下文绑定
+    "omegaconf>=2.4.0",           # 结构化配置加载（YAML -> dataclass 校验）
+    "qdrant-client>=1.19.1",      # Qdrant 向量数据库客户端
+    "sqlalchemy[asyncio]>=2.1.4", # ORM 框架，启用 asyncio 支持
+]

@@ -1,0 +1,58 @@
+# ============================================================
+# 应用系统配置文件（由 APP/config/APP_config.py 中的 load_config 加载，
+# 并解析成 APPConfig dataclass 对象；字段名必须与 dataclass 一致）
+# ============================================================
+
+# 元数据库配置：存放“表 / 字段 / 指标”等元数据信息
+db_meta:
+  # 数据库主机地址
+  host: 172.16.50.95
+  # 数据库端口（MySQL 默认 3306）
+  port: 3306
+  # 登录用户名
+  user: root
+  # 登录密码
+  password: duoceshi123
+  # 数据库名（元数据库）
+  database: meta
+
+# 数据仓库配置：存放真实业务数据，用来反查字段类型与示例取值
+db_dw:
+  # 数据库主机地址
+  host: 172.16.50.95
+  # 数据库端口
+  port: 3306
+  # 登录用户名
+  user: root
+  # 登录密码
+  password: duoceshi123
+  # 数据库名（数据仓库）
+  database: dw
+
+# 向量数据库 Qdrant 配置
+qdrant:
+  # Qdrant 服务主机地址
+  host: 111.230.143.239
+  # Qdrant REST 端口（默认 6333）
+  port: 6333
+
+# 向量化（Embedding）服务配置，兼容 OpenAI 接口协议
+embedding:
+  # 向量化服务主机地址
+  host: 111.230.143.239
+  # 服务端口（OpenAI 兼容接口，路径为 /v1）
+  port: 8081
+  # 向量维度：必须与 Qdrant 集合的向量维度保持一致
+  embedding_size: 1024
+
+# Elasticsearch 全文检索配置
+es:
+  # ES 服务主机地址
+  host: 111.230.143.239
+  # ES HTTP 端口（默认 9200）
+  port: 9200
+
+llm:
+    base_url: https://api.deepseek.com
+    api_key: sk-269500eac7594701afb39defc21ff87c
+    model: deepseek-flash

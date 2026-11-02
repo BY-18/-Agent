@@ -1,0 +1,8 @@
+ALTER TABLE `t_column_info`
+ADD COLUMN `a` varchar(255) NULL COMMENT 'a' AFTER `update_by`;
+
+insert into
+
+update
+
+delete
